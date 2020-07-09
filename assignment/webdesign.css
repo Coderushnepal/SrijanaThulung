@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: "Roboto";
+  font-size: 22px;
+}
+
+.main-container {
+  background: linear-gradient(90deg, #fffceb 0%, #eafffe 100%);
+  padding: 60px 20px;
+}
+.container-left h1 {
+  font-size: 40px;
+  line-height: 49px;
+}
+.container-left p {
+  margin: 25px 0;
+  font-size: 14px;
+  line-height: 140.62%;
+}
+.container-left .first-button {
+  background: #798bfe;
+  border-radius: 5px;
+  color: white;
+  padding: 16px 36px 15px;
+  border: #798bfe;
+  margin-bottom: 60px;
+}
+.container-right img {
+  margin: 20px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* tablet view */
+@media only screen and (min-width: 768px) {
+  .container-left {
+    float: left;
+    width: 50%;
+  }
+  .container-right {
+    float: right;
+    width: 50%;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1200px) {
+  .container-left {
+    float: left;
+    width: 50%;
+  }
+  .container-right {
+    float: right;
+    width: 50%;
+  }
+  .container-left h1 {
+    font-size: 56px;
+    line-height: 68px;
+  }
+  .container-left p {
+    font-size: 18px;
+    line-height: 140.62%;
+  }
+
+  .container-right img {
+    width: calc(100%-20px);
+    height: auto;
+    margin-top: 45px;
+  }
+}
+/* for message  */
+
+.intro-message h2 {
+  font-size: 26px;
+  line-height: 36px;
+  padding: 50px 20px 40px;
+}
+.intro-message-left img {
+  padding: 0px 48px 39.8px 47px;
+}
+.intro-message-right h4 {
+  font-size: 14px;
+  line-height: 140.62%;
+  padding: 0px 20px 12px;
+}
+.intro-message-right p {
+  font-size: 12px;
+  line-height: 140.62%;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0px 20px 20px;
+}
+.intro-message-right a {
+  font-size: 12px;
+  line-height: 140.62%;
+  color: #798bfe;
+  padding: 20px;
+}
+.intro-message-right h3 {
+  display: none;
+}
+/* for tablet view */
+@media only screen and (min-width: 768px) {
+  .intro-message-left {
+    float: left;
+    width: 50%;
+  }
+  .intro-message-left h2 {
+    display: none;
+  }
+  .intro-message-right {
+    float: right;
+    width: 50%;
+  }
+  .intro-message-right h3 {
+    display: inline-block;
+    padding: 64px 59px 16px 44px;
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .intro-message-right h4,
+  .intro-message-right a,
+  .intro-message-right p {
+    padding-left: 44px;
+    padding-right: 59px;
+  }
+  .intro-message-left img {
+    padding-top: 64px;
+  }
+}
+
+/* for desktop view */
+@media only screen and (min-width: 1200px) {
+  .intro-message-left img {
+    padding-top: 110px 136px 110px 165px;
+  }
+  .intro-message-right h3 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .intro-message-right h4 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .intro-message-right p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .intro-message-right a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+/* UPCOMING TRAINING */
+
+h5 {
+  padding: 60px 138px 44px 20px;
+  font-size: 26px;
+  line-height: 42px;
+}
+.oracle-left img,
+.python-left img,
+.android-left img,
+.cisco-left img {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+.oracle-right h5,
+.python-right h5,
+.android-right h5,
+.cisco-right h5 {
+  padding: 20px 190px 16px 20px;
+  font-size: 16px;
+  line-height: 28px;
+  width: 100%;
+}
+.oracle-right p,
+.oracle-right span,
+.python-right p,
+.python-right span,
+.android-right p,
+.android-right span,
+.cisco-right p,
+.cisco-right span {
+  font-size: 12px;
+  line-height: 17px;
+  width: 100%;
+}
+.training-session {
+  width: 100%;
+}
+.btn button {
+  color: white;
+  background-color: #798bfe;
+  border-radius: 5px;
+  padding: 9px 14px 10px 15px;
+  border: #798bfe;
+}
+.btn {
+  padding-top: 20px;
+  margin-bottom: 36px;
+}
+
+/* Tablet View*/
+@media only screen and (min-width: 768px) {
+  h5 {
+    padding: 60px 264px;
+  }
+  .training {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .oracle,
+  .android {
+    float: left;
+    width: 48%;
+  }
+  .python,
+  .cisco {
+    float: right;
+    width: 48%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h5 {
+    text-align: center;
+    font-size: 32px;
+    line-height: 42px;
+    margin: 0 0 65px;
+  }
+
+  .training-session {
+    width: 100%;
+  }
+  .oracle,
+  .python,
+  .android,
+  .cisco {
+    float: left;
+    width: 25%;
+  }
+  .oracle-right h5,
+  .python-right h5,
+  .android-right h5,
+  .cisco-right h5,
+  .oracle-right p,
+  .oracle-right span,
+  .python-right p,
+  .python-right span,
+  .android-right p,
+  .android-right span,
+  .cisco-right p,
+  .cisco-right span {
+    width: 100%;
+  }
+}
+/* FOOTER */
+.solution,
+.platform,
+.company,
+.resources,
+.support {
+  border-bottom: 1px solid rgba(218, 217, 217, 0.5);
+  padding: 9px 0;
+  width: 100%;
+  padding: 9px 20px;
+}
+.solution .solution-left span,
+.platform .platform-left span,
+.company .company-left span,
+.resources .resources-left span,
+.support .support-left span {
+  float: left;
+  font-size: 16px;
+  line-height: 28px;
+}
+.solution .icon-right,
+.platform .icon-right,
+.company .icon-right,
+.resources .icon-right,
+.support .icon-right {
+  float: right;
+}
+.secondary-btn {
+  margin: 10px;
+  background: black;
+}
+ul {
+  display: none;
+  list-style-type: none;
+}
+.social-media {
+  margin: 10px 20px;
+  border-bottom: 1px solid rgba(218, 217, 217, 0.5);
+}
+
+.social-media span {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.footer-bottom {
+  margin: 10px 20px;
+}
+.footer-bottom span {
+  font-size: 10px;
+  line-height: 28px;
+  padding-top: 12px;
+  padding-left: 20px;
+}
+
+/* for tablet view-FOOTER */
+
+@media only screen and (min-width: 768px) {
+  .main-footer {
+    background: #fdfff9;
+  }
+  .solution .icon-right .secondary-btn,
+  .platform .icon-right .secondary-btn,
+  .company .icon-right .secondary-btn,
+  .resources .icon-right .secondary-btn,
+  .support .icon-right .secondary-btn {
+    display: none;
+  }
+  ul {
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .solution .icon-right ul {
+    float: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+}
