@@ -1,8 +1,5 @@
 function toArray(obj) {
-  let keys = Object.keys(obj);
-  let values = Object.values(obj);
-  let result = Object.entries(obj);
-  return result;
+  return Object.entries(obj);
 }
 console.log(
   toArray({

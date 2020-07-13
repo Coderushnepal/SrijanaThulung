@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: "Roboto";
+  font-size: 22px;
+}
+.subhero {
+  background-image: url("./images/Hero\ BG\ Image.png");
+}
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.header {
+  height: 50px;
+}
+.header-left {
+  float: left;
+}
+.header-right {
+  float: right;
+  margin: 5px;
+}
+.header-left img {
+  width: 80px;
+  height: auto;
+  margin-top: 16px;
+  margin-left: 5px;
+}
+.header-right span,
+.header-right a {
+  font-size: 13px;
+  line-height: 15px;
+  color: white;
+}
+h1 {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+p {
+  font-size: 14px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+}
+.title-button {
+  background-color: transparent;
+  
+}
+.button1 {
+  float: left;
+  margin-left: 50px;
+}
+}
+.button2 {
+  float: right;
+    margin-right: 30px;
+}
