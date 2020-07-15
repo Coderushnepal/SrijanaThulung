@@ -449,31 +449,6 @@ input {
   }
 }
 /*GRID-features */
-.grid-top {
-  background-color: red;
-  margin-top: 30px;
-}
-.stand {
-  margin-top: 30px;
-  width: 100%;
-  display: inline-block;
-}
-.stand img {
-  width: 20px;
-  height: auto;
-  margin-left: 50px;
-  margin-top: 10px;
-}
-.item-right {
-  background-color: green;
-}
-.text-right {
-  float: right;
-  margin-right: 80px;
-}
-.text-right h4 {
-  color: white;
-}
 .grid-bottom {
   background-color: #2f3035;
   padding: 10px;
@@ -502,40 +477,68 @@ input {
   float: right;
   margin-top: 10px;
 }
+.grid-top {
+  background-color: #2f3035;
+  margin-top: 30px;
+  padding: 15px;
+}
+
+.text-text-right h5 {
+  color: white;
+}
+.stand-left {
+  float: left;
+  margin-top: 16px;
+  margin-left: 50px;
+}
+.text-text-right {
+  float: left;
+}
+.stand-left img {
+  width: 50%;
+  height: auto;
+}
+
+.text-text-right p {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.text-text-right h4 {
+  font-size: 18px;
+  line-height: 18px;
+  color: white;
+}
 /* FOR TABLET VIEW */
 @media only screen and (min-width: 768px) {
   .item-left {
     float: left;
-    width: 50%;
+    width: 48%;
+    padding: 20px;
   }
   .item-right {
     float: right;
-    width: 50%;
+    width: 48%;
+    padding: 20px;
   }
 }
-
 /* FOR DESKTOP VIEW */
 @media only screen and (min-width: 1200px) {
-  .grid-left span {
-    font-size: 10px;
-    line-height: 10px;
-  }
-  .grid-left h5 {
-    font-size: 20px;
-    line-height: 20px;
-  }
-  .stand img {
-    width: 25px;
+  .stand-left img {
+    width: 50%;
     height: auto;
   }
-  .stand p {
-    font-size: 16px;
-    line-height: 16px;
 
-    color: rgba(255, 255, 255, 0.75);
+  .text-text-right p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .text-text-right h4 {
+    font-size: 24px;
+    line-height: 28px;
   }
 }
-
 /* FOOTER */
 .footer {
   background-color: white;
