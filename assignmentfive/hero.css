@@ -9,6 +9,7 @@ body {
   font-size: 22px;
 }
 .subhero {
+  background-size: 1754px 2578.38px;
   background-image: url("./images/Hero\ BG\ Image.png");
   height: 100%;
   background-size: cover;
@@ -56,6 +57,7 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  padding: 35px;
 }
 .primary-btn {
   padding: 6px;
@@ -88,9 +90,8 @@ video {
   text-align: center;
 }
 .hero-form {
+  padding: 10px;
   margin-top: 0px;
-  box-shadow: 0px 2px 6px rgba(47, 48, 53, 0.1),
-    0px 1px 1px rgba(47, 48, 53, 0.1);
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   background: linear-gradient(119.81deg, #ffffff 0.34%, #f3f4f9 48.48%), #f3f4f9;
@@ -148,14 +149,14 @@ label {
   background: #ffd300;
   border-radius: 30px;
   border: #ffd300;
-  font-size: 11px;
+  font-size: 13px;
   margin-top: 5px;
 }
 .form-content {
-  text-align: center;
+  float: right;
 }
 .hero-content {
-  text-align: center;
+  float: left;
 }
 input {
   border: none;
@@ -177,6 +178,11 @@ input {
 }
 /* FOR TABLET VIEW */
 @media only screen and (min-width: 768px) {
+  .subhero {
+    margin-bottom: 30px;
+    padding-bottom: 12rem;
+    position: relative;
+  }
   .hero-content {
     float: left;
     text-align: unset;
@@ -187,9 +193,21 @@ input {
     width: 40%;
   }
   .hero-form {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: -44px;
     padding: 1em;
-    width: 55%;
-    margin: auto;
+    width: 530px;
+    border-radius: 16px;
+    box-shadow: 0px 2px 6px rgba(47, 48, 53, 0.1),
+      0px 1px 1px rgba(47, 48, 53, 0.1);
+  }
+  video {
+    width: 530px;
+  }
+  input {
+    width: 100%;
   }
   .title p {
     font-size: 14px;
@@ -230,28 +248,12 @@ input {
   .secondary-btn {
     font-size: 16px;
   }
-  .hero-content h2 {
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 27px;
-  }
-  .hero-content p {
-    font-size: 20px;
-    line-height: 24px;
-  }
-  .hero-content ul {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: bold;
-  }
+
   label {
     font-size: 16px;
     line-height: 16px;
   }
-  .btn-one {
-    font-weight: bold;
-    font-size: 20px;
-  }
+
   .hero-form {
     margin-top: 16px;
   }
@@ -313,7 +315,6 @@ input {
 .icon-left img {
   width: 23px;
   height: auto;
-  margin-top: 20px;
 }
 .text-right h4 {
   font-weight: bold;
@@ -449,8 +450,10 @@ input {
   }
 }
 /*GRID-features */
-.grid-bottom {
+.grid-feature {
   background-color: #2f3035;
+}
+.grid-bottom {
   padding: 10px;
 }
 .btn-left .primary-btn {
@@ -477,68 +480,57 @@ input {
   float: right;
   margin-top: 10px;
 }
+/* grid bottom ko mathi deyko ho */
 .grid-top {
   background-color: #2f3035;
   margin-top: 30px;
   padding: 15px;
 }
-
-.text-text-right h5 {
-  color: white;
+.stand {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 30px;
+  position: relative;
+  color: #ffffff;
 }
 .stand-left {
-  float: left;
-  margin-top: 16px;
-  margin-left: 50px;
-}
-.text-text-right {
-  float: left;
-}
+  width: 25px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}ss
 .stand-left img {
-  width: 50%;
-  height: auto;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.stand-content {
+  display: inline-block;
+  padding-left: 48px;
 }
 
-.text-text-right p {
-  color: rgba(255, 255, 255, 0.75);
-  padding: 10px;
-  font-size: 12px;
-  line-height: 12px;
-}
-.text-text-right h4 {
+.stand-content h4 {
+  margin-bottom: 16px;
   font-size: 18px;
-  line-height: 18px;
-  color: white;
+  line-height: 22px;
+}
+.stand-content p {
+  font-size: 16px;
+  line-height: 16px;
 }
 /* FOR TABLET VIEW */
 @media only screen and (min-width: 768px) {
-  .item-left {
+  .stand {
+    width: 50%;
     float: left;
-    width: 48%;
-    padding: 20px;
-  }
-  .item-right {
-    float: right;
-    width: 48%;
-    padding: 20px;
+    min-height: 120px;
   }
 }
 /* FOR DESKTOP VIEW */
-@media only screen and (min-width: 1200px) {
-  .stand-left img {
-    width: 50%;
-    height: auto;
-  }
-
-  .text-text-right p {
-    font-size: 20px;
-    line-height: 24px;
-  }
-  .text-text-right h4 {
-    font-size: 24px;
-    line-height: 28px;
-  }
-}
 /* FOOTER */
 .footer {
   background-color: white;
