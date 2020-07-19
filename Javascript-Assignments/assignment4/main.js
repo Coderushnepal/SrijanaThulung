@@ -1,6 +1,5 @@
 var btn = document.getElementById("btn");
 var i = 0;
-var direction = 1;
 
 btn.addEventListener("click", function () {
   var ball = document.createElement("div");
@@ -18,8 +17,11 @@ btn.addEventListener("click", function () {
   ball.style.top = Math.random() * (box.clientHeight - 25) + "px";
   ball.style.left = Math.random() * (box.clientWidth - 25) + "px";
 
+  var direction = 1;
+
   ball.addEventListener("click", function (e) {
     //move continously
+
     setInterval(function () {
       var currentTop = ball.style.top;
       var newValue = parseInt(currentTop) + 10 * direction;
@@ -27,7 +29,7 @@ btn.addEventListener("click", function () {
 
       var clientHeight = box.clientHeight;
 
-      if (newValue >= clientHeight - 25 || newValue - 25 <= 0) {
+      if (newValue >= clientHeight - 25 || newValue <= 0) {
         direction *= -1;
       }
     }, 1000 / 60);
