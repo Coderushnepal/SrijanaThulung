@@ -1,5 +1,5 @@
-document.addEventListener("keydown", function (a) {
-  if ((a.key = "Enter")) {
+document.addEventListener("keydown", function (e) {
+  if ((e.key = "Enter")) {
     var box = document.getElementById("box-1");
 
     box.style.width = "500px";
