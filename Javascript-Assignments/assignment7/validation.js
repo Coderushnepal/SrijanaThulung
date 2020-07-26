@@ -1,49 +1,59 @@
-createForm.addEventListener("submit", (e) => {
-  //  var messageElement.innerHTML = "";
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  validateNameLabel();
-  validateEmailLabel();
-  validatePasswordLabel();
+  validateUserName();
+  validateEmailAddress();
+  validatePasswordError();
+  validateConfirmPassword();
 });
-function validateNameLabel() {
-  var messageElement = document.createElement("div");
-  if (inputElement.value === "" || inputElement.value <= 3) {
-    let message = "Username must be at least three character";
-    messageElement.innerHTML = message;
-    nameLabel.appendChild(messageElement);
+
+var userNameError = document.getElementById("user-error-message");
+function validateUserName() {
+  if (userInput.value === "" || userInput.value.length < 3) {
+    userNameError.style.display = "block";
+    userInput.style.border = "1px solid red";
+  } else {
+    userNameError.style.display = "none";
+    userInput.style.border = "1px solid green";
   }
 }
-function validateEmailLabel() {
-  var messageElement = document.createElement("div");
-  let email = emailElement.value;
+
+var emailAddressError = document.getElementById("email-error-message");
+function validateEmailAddress() {
+  let email = emailInput.value;
   var re = /\S+@\S+\.\S+/;
   let isEmailValid = re.test(email);
 
   if (isEmailValid === false) {
-    let message = "Email is not valid";
-    messageElement.innerHTML = message;
-    emailLabel.appendChild(messageElement);
+    emailAddressError.style.display = "block";
+    emailInput.style.border = "1px solid red";
+  } else {
+    emailAddressError.style.display = "none";
+    emailInput.style.border = "1px solid green";
   }
 }
-function validatePasswordLabel() {
-  var messageElement = document.createElement("div");
-  if (psdElement.value.length <= 6 || psdElement.value.length == "") {
-    let message = "password must be atleast 6 character";
-    messageElement.innerHTML = message;
-    psdLabel.appendChild(messageElement);
-    oldPassword = psdElement.value;
+
+var passwordError = document.getElementById("password-error-message");
+function validatePasswordError() {
+  if (passwordInput.value.length <= 6 || passwordInput.value.length == "") {
+    passwordError.style.display = "block";
+    passwordInput.style.border = "1px solid red";
+  } else {
+    passwordError.style.display = "none";
+    passwordInput.style.border = "1px solid green";
   }
 }
+
+var confirmPasswordError = document.getElementById("confirm-error-message");
 function validateConfirmPassword() {
-  var messageElement = document.createElement("div");
-
-  var matchPassword = confirmElement.value;
-  if (oldPassword != matchPassword || matchPassword == "") {
-    let message = "password2 is required";
-    messageElement.innerHTML = message;
-    confirmLabel.appendChild(messageElement);
+  if (confirmInput.value.length <= 6 || confirmInput.value.length == "") {
+    confirmPasswordError.style.display = "block";
+    confirmInput.style.border = "1px solid red";
+  } else if (passwordInput.value != confirmInput.value) {
+    confirmPasswordError.style.display = "block";
+    confirmPasswordError.innerHTML = "password do not match";
+    confirmInput.style.border = "1px solid red";
+  } else {
+    confirmPasswordError.style.display = "none";
+    confirmInput.style.border = "1px solid green";
   }
 }
-// deleteExistingValidations(){
-
-// }
