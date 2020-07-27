@@ -1,0 +1,56 @@
+.container {
+  width: 100%;
+}
+
+.heading {
+  position: absolute;
+  top: 10px;
+  left: 500px;
+  text-align: center;
+  color: white;
+}
+.sub-header {
+  font-size: 16px;
+}
+body {
+  position: relative;
+  background-color: #34495e;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game-container {
+  padding: 20px 30px;
+  position: relative;
+  margin: auto;
+  height: 600px;
+  width: 100%;
+  bottom: -150px;
+  left: 50px;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  position: absolute;
+  top: 30px;
+  left: 350px;
+}
+.dash-div {
+  padding: 10px;
+  margin-left: 500px;
+}
+.dashes {
+  border-bottom: 4px solid white;
+  width: 25px;
+  display: inline-block;
+  margin-left: 5px;
+}
