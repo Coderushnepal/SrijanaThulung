@@ -15,6 +15,10 @@ subHeader.classList.add("sub-header");
 subHeader.innerHTML = "Find the hidden word- Enter a letter";
 header.appendChild(subHeader);
 
+var hint = document.createElement("h2");
+hint.innerHTML = "Hint: types of fruits";
+container.appendChild(hint);
+
 var dashDiv = document.createElement("div");
 dashDiv.classList.add("dash-div");
 container.appendChild(dashDiv);
@@ -30,12 +34,22 @@ var fruits = [
 ];
 
 var fruitList = fruits[Math.floor(Math.random() * fruits.length)];
-// console.log(fruitList);
+console.log(fruitList);
 
 for (var i = 0; i < fruitList.length; i++) {
   var letterDash = document.createElement("div");
   letterDash.classList.add("dashes");
   dashDiv.appendChild(letterDash);
 }
+var dashBox = document.getElementsByClassName("dashes");
+document.addEventListener("keydown", function (e) {
+  console.log(e);
 
-document.addEventListener("keydown", function (e) {});
+  for (var j = 0; j < fruitList.length; j++) {
+    if (fruitList[j] === e.key) {
+      dashBox[j].innerHTMl = e.key;
+
+      console.log("letter is found");
+    }
+  }
+});

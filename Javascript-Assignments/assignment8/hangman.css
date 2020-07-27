@@ -44,6 +44,9 @@ body {
   top: 30px;
   left: 350px;
 }
+.figure-part {
+  display: none;
+}
 .dash-div {
   padding: 10px;
   margin-left: 500px;
@@ -53,4 +56,9 @@ body {
   width: 25px;
   display: inline-block;
   margin-left: 5px;
+}
+h2 {
+  font-size: 18px;
+  margin-left: 500px;
+  margin-bottom: -80px;
 }
