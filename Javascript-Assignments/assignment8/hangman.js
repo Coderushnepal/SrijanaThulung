@@ -32,6 +32,8 @@ wrongWords.appendChild(breakline);
 var dashDiv = document.createElement("div");
 dashDiv.classList.add("dash-div");
 container.appendChild(dashDiv);
+
+//HINTS
 var hint = document.createElement("h2");
 hint.innerHTML = "Hint: types of fruits";
 container.appendChild(hint);
@@ -54,7 +56,13 @@ for (var i = 0; i < fruitList.length; i++) {
   letterDash.classList.add("dashes");
   dashDiv.appendChild(letterDash);
 }
+var wrongLetters = [];
+var wrongGuess = document.createElement("span");
+wrongGuess.id = "wrong-letter";
+wrongWords.appendChild(wrongGuess);
+
 var dashBox = document.getElementsByClassName("dashes");
+
 document.addEventListener("keydown", function (e) {
   console.log(e);
   if (fruitList.includes(e.key)) {
@@ -64,9 +72,14 @@ document.addEventListener("keydown", function (e) {
       }
     }
   } else {
-    var wrongLetter = document.createElement("span");
-    wrongLetter.classList.add("wrong-letter");
-    wrongLetter.innerHTML = e.key;
-    wrongWords.appendChild(wrongLetter);
+    displayFigureParts();
+
+    wrongGuess = document.getElementById("wrong-letter");
+    // console.log(wrongGuess);
+    if (!wrongLetters.includes(e.key)) {
+      wrongLetters.push(e.key);
+    }
+    wrongGuess.innerHTML = wrongLetters.join(",");
+    console.log(wrongLetters);
   }
 });
