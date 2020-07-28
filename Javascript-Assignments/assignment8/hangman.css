@@ -68,3 +68,33 @@ h2 {
   font-size: 18px;
   margin-left: 500px;
 }
+h3 {
+  font-size: 16px;
+
+  color: blue;
+  font-weight: normal;
+  text-align: center;
+}
+.message {
+  background-color: white;
+  width: 17%;
+  margin-left: 550px;
+  display: none;
+}
+#winBox {
+  width: 16%;
+  background-color: rgb(128, 66, 66);
+  display: none;
+  margin-left: 550px;
+}
+.text {
+  color: black;
+  padding: 5px;
+  text-align: center;
+}
+#lossBox {
+  width: 12%;
+  background-color: rgb(128, 66, 66);
+  margin-left: 550px;
+  display: none;
+}
