@@ -26,13 +26,22 @@
         <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
         <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
       </svg>
+      <div id="winBox">
+        <h2>You won</h2>
+        <button onClick="window.location.reload();" id="win-btn">
+          Play again
+        </button>
+      </div>
+        <div id="lossBox">
+          <h2>You Lost</h2>
+          <button onClick="window.location.reload();" id="loss-btn">
+            Play again
+          </button>
     </div>
-    <!-- <button onClick="window.location.reload();" id="win-btn">
-      play again
-    </button>
-    <button onClick="window.location.reload();" id="loss-btn">
+
+    <!-- <button onClick="window.location.reload();" id="loss-btn">
       Play again
-    </button> -->
+    </button>  -->
   </body>
   <script src="display.js"></script>
   <script src="hangman.js"></script>
