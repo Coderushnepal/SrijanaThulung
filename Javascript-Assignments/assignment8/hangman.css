@@ -82,9 +82,9 @@ h3 {
   display: none;
 }
 #winBox {
-  width: 16%;
+  width: 20%;
   background-color: rgb(128, 66, 66);
-  display: none;
+  /* display: none; */
   margin-left: 550px;
 }
 .text {
@@ -93,8 +93,21 @@ h3 {
   text-align: center;
 }
 #lossBox {
-  width: 12%;
+  width: 20%;
   background-color: rgb(128, 66, 66);
   margin-left: 550px;
   display: none;
+}
+
+#winBtn {
+  padding: 8px;
+  margin-left: 52px;
+  background-color: blue;
+  color: white;
+}
+#lossBtn {
+  padding: 8px;
+  margin-left: 52px;
+  background-color: blue;
+  color: white;
 }

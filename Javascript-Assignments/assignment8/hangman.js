@@ -27,6 +27,33 @@ winValue.classList.add("text");
 winValue.innerHTML = "Congratulation,YOU WIN!";
 winResult.appendChild(winValue);
 
+//for win--button
+var winButton = document.createElement("button");
+winButton.innerHTML = "Play again";
+winButton.id = "winBtn";
+winButton.onclick = "win()";
+console.log(winResult);
+winResult.appendChild(winButton);
+
+winButton.addEventListener("click", () => {
+  console.log("123");
+});
+
+// // // for win button
+// // winButton.onclick = function win() {
+// //   window.location.reload();
+// // };
+// function win() {
+//   console.log("apple");
+//   window.location.reload();
+// }
+// winButton.onclick = win()
+// var btn1 = document.getElementById("winBtn");
+// btn1.addEventListener("click", function (e) {
+
+//   window.location.reload(true);
+// });
+// console.log(winButton);
 //for loss result
 var lossResult = document.createElement("div");
 lossResult.id = "lossBox";
@@ -35,6 +62,19 @@ var lossValue = document.createElement("div");
 lossValue.classList.add("text");
 lossValue.innerHTML = "SORRY,YOU LOST!!";
 lossResult.appendChild(lossValue);
+
+//for loss--button
+var lossButton = document.createElement("button");
+lossButton.innerHTML = "Play again";
+lossButton.id = "lossBtn";
+lossResult.appendChild(lossButton);
+
+// // for loss button
+// lossButton.addEventListener("click", function (e) {
+//   window.location.reload();
+//   return false;
+// });
+
 //WRONGwORDS
 var wrongDiv = document.createElement("div");
 wrongDiv.classList.add("wrong-div");
@@ -95,7 +135,7 @@ document.addEventListener("keydown", function (e) {
   if (fruitList.includes(e.key)) {
     if (correctlyGuessedLetters.includes(e.key)) {
       // console.log("already guessed ", e.key);
-      toast.style.display = "inline-block";
+      toast.style.display = "block";
       setTimeout(() => {
         toast.style.display = "none";
       }, 1000);
@@ -108,7 +148,7 @@ document.addEventListener("keydown", function (e) {
         if (correctlyGuessedLetters.length === fruitList.length) {
           var winBox = this.getElementById("winBox");
           console.log("you win");
-          winBox.style.display = "inline-block";
+          winBox.style.display = "block";
         }
       }
     }
@@ -134,3 +174,8 @@ document.addEventListener("keydown", function (e) {
     console.log(wrongLetters);
   }
 });
+
+// // for loss button
+// lossButton.addEventListener("click", function (e) {
+//   window.location.reload();
+// });
