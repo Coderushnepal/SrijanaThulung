@@ -27,11 +27,11 @@ class Counter extends Component {
   render() {
     return (
       <div className="cards">
-        <h1 className={isVowel(this.props.name[0]) ? "red" : "blue"}>
+        <h3 className={isVowel(this.props.name[0]) ? "red" : "blue"}>
           {this.props.name}
-        </h1>
+        </h3>
         <div className="buttons">
-          <h2>count={this.state.count}</h2>
+          <h4>count={this.state.count}</h4>
           <button onClick={this.handleIncrement}>+</button>
           <button onClick={this.handleDecrement}>-</button>
         </div>

@@ -37,8 +37,25 @@
   }
 }
 .cards {
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
-  margin: auto;
+  border: 1px solid blue;
+  height: 150px;
+  width: 150px;
+  margin: 10px auto;
+  background-color: white;
+  margin-bottom: 5px;
+}
+.App {
+  background-color: aqua;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 10 auto;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  margin-left: 150px;
 }
