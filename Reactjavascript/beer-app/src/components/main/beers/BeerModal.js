@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Modal, Spinner } from "../../common";
+import { Modal, Spinner } from "../../commons";
 import { fetchBeerById } from "../../../services/beerService";
 import * as toast from "../.././../utils/toast";
 
@@ -29,7 +29,7 @@ class BeerModal extends Component {
       const errorMsg = error.response.data.message;
       toast.error({
         title: "oh Snap!!",
-        message: "api is not working,Beers not retrieved!",
+        message: errorMsg,
       });
     }
   };

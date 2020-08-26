@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import history from "../../src/utils/history";
 import * as routes from "../constants/routes";
 import Main from "./main/Main";
-import Favourites from "./favourites/favourites";
+import Favourites from "./favourites/Favourites";
 
 // const Favourites = () => <h2>Favourite Page</h2>;
 

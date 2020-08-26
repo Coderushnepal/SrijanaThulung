@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import * as routes from "../../constants/routes";
+import PropTypes from "prop-types";
 
-class Header extends Component {
+import * as routes from "../../../constants/routes";
+
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -10,12 +12,18 @@ class Header extends Component {
       searchText: "",
     };
   }
-  searchText = "abc";
+
   handleTextChange = (event) => {
     this.setState({
       searchText: event.target.value,
     });
   };
+
+  search = (event) => {
+    event.preventDefault();
+    this.props.setSearchText(this.state.searchText);
+  };
+
   render() {
     return (
       <header className="header">
@@ -28,7 +36,7 @@ class Header extends Component {
                 </Link>
               </li>
               <li>
-                <Link to={routes.FAVOURITES} title="favourite">
+                <Link to={routes.FAVOURITES} title="favourites">
                   Favourites
                 </Link>
               </li>
@@ -37,13 +45,13 @@ class Header extends Component {
           <div className="header__bottom">
             <h1>The Beer Bank</h1>
             <span>Find your favourite beer here</span>
-            <form>
+            <form onSubmit={this.search}>
               <input
                 type="search"
-                placeholder="search beer name"
+                placeholder="Search beer name"
                 value={this.state.searchText}
                 onChange={this.handleTextChange}
-              />
+              ></input>
             </form>
           </div>
         </div>
@@ -51,4 +59,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  setSearchText: PropTypes.func,
+};
+
 export default Header;
