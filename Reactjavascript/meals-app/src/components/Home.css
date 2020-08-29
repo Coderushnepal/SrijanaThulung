@@ -43,10 +43,21 @@ h1 {
   opacity: 3;
 }
 .navbar-light .navbar-brand {
-  color: black;
+  font-size: 30px;
+  color: rgb(207, 30, 30);
   font-weight: bold;
 }
 /* input {
   color: rgb(11, 24, 11);
   font-weight: bold;
 } */
+a {
+  margin-left: 10px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  /* background-color: transparent; */
+}
+h2 img {
+  margin-left: 4px;
+}

@@ -43,6 +43,14 @@ class Header extends Component {
                 <Link to={routes.ORDERNOW} title="order now">
                   Order Now
                 </Link>
+                {/* 
+                <Link
+                  to={{
+                    pathname: routes.ORDERNOW,
+                  }}
+                >
+                  Order Now
+                </Link> */}
               </li>
             </ul>
             {/* <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
