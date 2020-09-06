@@ -30,3 +30,11 @@
 {"message":"GET /users/6","level":"info"}
 {"message":"Fetching user information with id 6","level":"info"}
 {"message":"cannot find the user with id 6","level":"error"}
+{"message":"GET /users/6","level":"info"}
+{"message":"Fetching user information with id 6","level":"info"}
+{"message":"cannot find the user with id 6","level":"error"}
+{"message":"GET /users","level":"info"}
+{"message":"fetching all users","level":"info"}
+{"message":"GET /users","level":"info"}
+{"message":"fetching all users","level":"info"}
+{"message":"GET /users/1","level":"info"}

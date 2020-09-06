@@ -1,21 +1,24 @@
 import usersJson from "../data/users";
 import logger from "../utils/logger";
+import connection from "../db";
 
-export function getAllUsers() {
+export async function getAllUsers() {
   logger.info("fetching all users");
+  const data = await connection.select("*").from(" users");
 
   return {
-    message:"List of all users",
-    data:usersJson
+    data,
+    message: "List of all users",
   };
 }
 
-export function getUserById(userId) {
+export async function getUserById(userId) {
   logger.info(`Fetching user information with id ${userId}`);
 
-  const requestedUser = usersJson.find((user) => user.id === userId);
+  const [result ]=  await connection.select("*").from(" users").where('id',userId);
 
-  if (!requestedUser) {
+
+  if (!result) {
     logger.error(`cannot find the user with id ${userId}`);
 
     throw new NotFoundError(`cannot find the user with id ${userId}`);
@@ -28,8 +31,8 @@ export function getUserById(userId) {
 
   return {
     message: `Information about userId ${userId}`,
-    data: requestedUser
-  }
+    data: result,
+  };
 }
 export function createUser(params) {
   const maxId = usersJson.reduce((acc, cur) => {
@@ -41,12 +44,12 @@ export function createUser(params) {
     ...params,
   });
 
- return{
+  return {
     message: "New user added successfully",
     data: {
       id: maxId + 1,
       ...params,
-    }
+    },
   };
 }
 
@@ -56,24 +59,22 @@ export function deleteUser(userId) {
   if (!doesUserExist) {
     logger.error(`cannot find the user with id ${userId}`);
     throw new Error(`cannot find the user with id ${userId}`);
-   
   }
   const updatedUsersList = usersJson.filter((user) => user.id !== userId);
 
   fs.writeFileSync(usersJsonPath, JSON.stringify(updatedUsersList, null, 2));
 
-  return{
+  return {
     message: "Deleted user with id " + userId,
   };
 }
 
-export function updateUser(userId, params){
-
+export function updateUser(userId, params) {
   const updatedJson = usersJson.map((user) => {
     if (user.id === userId) {
       return {
         ...user,
-        ...params
+        ...params,
       };
     }
 
@@ -82,7 +83,7 @@ export function updateUser(userId, params){
 
   fs.writeFileSync(usersJsonPath, JSON.stringify(updatedJson, null, 2));
 
- return{
+  return {
     message: "Updated user with id " + userId,
   };
 }
