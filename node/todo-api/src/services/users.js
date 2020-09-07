@@ -1,11 +1,11 @@
 import usersJson from "../data/users";
 import logger from "../utils/logger";
-import connection from "../db";
+import * as User from "../models/User";
+import * as UserPhoneNumber from "../models/UserPhoneNumber";
 
 export async function getAllUsers() {
   logger.info("fetching all users");
-  const data = await connection.select("*").from(" users");
-
+  const data = await User.getAll();
   return {
     data,
     message: "List of all users",
@@ -15,7 +15,7 @@ export async function getAllUsers() {
 export async function getUserById(userId) {
   logger.info(`Fetching user information with id ${userId}`);
 
-  const [result ]=  await connection.select("*").from(" users").where('id',userId);
+  const result = await User.getUserById(userId);
 
 
   if (!result) {
@@ -34,22 +34,27 @@ export async function getUserById(userId) {
     data: result,
   };
 }
-export function createUser(params) {
-  const maxId = usersJson.reduce((acc, cur) => {
-    return cur.id > acc ? cur.id : acc;
-  }, 0);
+export async function createUser(params) {
 
-  usersJson.push({
-    id: maxId + 1,
-    ...params,
-  });
+  const { firstName, lastName, email, password, phoneNumbers } = params;
 
+  const userInsertData = await User.createUser(
+    {
+      firstName, lastName, email, password
+    }
+  );
+
+  const insertDataForPhoneNumbers = phoneNumbers.map(phone => ({
+    userId: userInsertData.id,
+    phoneNumber: phone.number,
+    type:phone.type
+  }))
+
+  const phoneNumberInsertedData = await UserPhoneNumber.add(insertDataForPhoneNumbers);
+  
   return {
-    message: "New user added successfully",
-    data: {
-      id: maxId + 1,
-      ...params,
-    },
+    data:params,
+    message: "New user added successfully"
   };
 }
 
