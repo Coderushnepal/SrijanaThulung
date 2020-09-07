@@ -38,3 +38,5 @@
 {"message":"GET /users","level":"info"}
 {"message":"fetching all users","level":"info"}
 {"message":"GET /users/1","level":"info"}
+{"message":"GET /users/1","level":"info"}
+{"message":"Fetching user information with id 1","level":"info"}
