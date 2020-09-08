@@ -1,9 +1,9 @@
-import Knex from "knex";
-import dotenv from "dotenv";
+require('@babel/register');
+const dotenv = require('dotenv');
 
 dotenv.config({ path:__dirname + '/../.env'});
 
- export const dbConfig = {
+ const dbConfig = {
   client: process.env.DB_CLIENT,
   connection: {
     host: process.env.DB_HOST,
@@ -17,4 +17,4 @@ dotenv.config({ path:__dirname + '/../.env'});
          table:'migrations'
   }
 };
-
+module.exports = dbConfig;
