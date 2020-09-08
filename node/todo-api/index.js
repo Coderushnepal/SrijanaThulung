@@ -26,6 +26,7 @@ app.use(morgan("tiny"));
 app.use(loggingMiddleware);
 app.use(routes);
 app.use(genericErrorHandler);
+
 dotenv.config();
 console.log("Env:", process.env);
 

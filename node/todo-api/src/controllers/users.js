@@ -60,15 +60,10 @@ export function createUser(req, res, next) {
  * @param {*} next
  */
 export function deleteUser(req, res, next) {
-  const userId = +req.params.userId;
-
-  try {
-    const data = userService.deleteUser(userId);
-
-    res.json(data);
-  } catch (err) {
-    next(err);
-  }
+  userService
+  .deleteUser(+req.params.userId)
+  .then(data => res.json(data))
+  .catch(err => next(err));
 }
 
 /**
@@ -78,14 +73,11 @@ export function deleteUser(req, res, next) {
  * @param {*} next
  */
 export function updateUser(req, res, next) {
-  const params = req.body;
-  const userId = +req.params.userId;
 
-  try {
-    const data = userService.updateUser(userId, params);
 
-    res.json(data);
-  } catch (err) {
-    next(err);
-  }
+  userService
+  .deleteUser(+req.params.userId,req.body)
+  .then(data => res.json(data))
+  .catch(err => next(err));
+  
 }
