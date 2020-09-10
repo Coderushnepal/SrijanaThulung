@@ -3,9 +3,9 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import dotenv from "dotenv";
 
-import routes from "./src/routes";
-import logger from "./src/utils/logger";
-import genericErrorHandler from "./src/middlewares/genericErrorHandler";
+import routes from "./routes";
+import logger from "./utils/logger";
+import genericErrorHandler from "./middlewares/genericErrorHandler";
 import { PRECONDITION_FAILED } from "http-status-codes";
 
 const appPort = 3000;
