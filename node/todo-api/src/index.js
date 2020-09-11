@@ -28,7 +28,7 @@ app.use(routes);
 app.use(genericErrorHandler);
 
 dotenv.config();
-console.log("Env:", process.env.PORT);
+// console.log("Env:", process.env.PORT);
 
 // app.listen(1234, () => {
 //   logger.info(`Listening on port  ${appPort} `);
